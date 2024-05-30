@@ -1,0 +1,103 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<style>
+.emoji {
+  font-size: 48px; /* Adjust font size as needed */
+  cursor: pointer; /* Change cursor to indicate interactivity */
+}
+</style>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+<div class="emoji">
+	<svg class="emoji" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="64" cy="64" r="56" fill="#fffe00" />
+  <circle cx="48" cy="50" r="8" fill="#000000" />
+  <circle cx="80" cy="50" r="8" fill="#000000" />
+  <path id="smile" d="M44 80 C 44,86 50,90 56,90 C 62,90 68,86 68,80 A 12 12 0 0 1 56,68 C 50,68 44,74 44,80 Z" fill="#000000">
+  </path>
+</svg>
+</div>
+
+<script>
+document.querySelector('.emoji').addEventListener('mouseover', function() {
+  const smile = document.getElementById('smile');
+  const animateElement = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
+  animateElement.setAttribute('attributeName', 'd');
+  animateElement.setAttribute('values', 'M44 80 C 44,86 50,90 56,90 C 62,90 68,86 68,80 A 12 12 0 0 1 56,68 C 50,68 44,74 44,80 Z; M44 80 C 44,83 50,85 56,85 C 62,85 68,83 68,80 A 12 12 0 0 1 56,72 C 50,72 44,77 44,80 Z');
+  animateElement.setAttribute('dur', '0.5s');
+  animateElement.setAttribute('repeatCount', 'indefinite');
+  smile.appendChild(animateElement);
+});
+
+document.querySelector('.emoji').addEventListener('mouseout', function() {
+  const smile = document.getElementById('smile');
+  const animateElement = smile.querySelector('animate');
+  if (animateElement) {
+    smile.removeChild(animateElement);
+  }
+});
+</script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cat Emoji with Hover Animation</title>
+<style>
+.emoji {
+  width: 128px;
+  height: 128px;
+  cursor: pointer;
+}
+
+@keyframes blink {
+  0%, 20%, 60%, 100% {
+    transform: scaleY(1);
+  }
+  40% {
+    transform: scaleY(0.1);
+  }
+}
+
+.emoji:hover .eye {
+  animation: blink 1s infinite;
+}
+</style>
+</head>
+<body>
+
+<h1>Cat Emoji with Hover Animation</h1>
+<div class="emoji">
+  <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+    <!-- Cat Face -->
+    <circle cx="64" cy="64" r="60" fill="#ffcc00" stroke="#000" stroke-width="4"/>
+
+    <!-- Eyes -->
+    <ellipse class="eye" cx="45" cy="50" rx="10" ry="15" fill="#000"/>
+    <ellipse class="eye" cx="83" cy="50" rx="10" ry="15" fill="#000"/>
+
+    <!-- Nose -->
+    <polygon points="60,70 68,70 64,78" fill="#000"/>
+
+    <!-- Mouth -->
+    <path d="M54 82 Q64 92 74 82" stroke="#000" stroke-width="4" fill="none"/>
+    <path d="M64 78 Q64 88 74 82" stroke="#000" stroke-width="4" fill="none"/>
+
+    <!-- Ears -->
+    <polygon points="24,20 40,40 28,52" fill="#ffcc00" stroke="#000" stroke-width="4"/>
+    <polygon points="104,20 88,40 100,52" fill="#ffcc00" stroke="#000" stroke-width="4"/>
+  </svg>
+</div>
+
+</body>
+</html>
+
+

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Realistic City Skyline SVG</title>
+<style>
+    .city {
+        width: 1200px;
+    }
+    .building-window {
+        fill: #ffffcc;
+    }
+    .car-body {
+        fill: #ff6347;
+    }
+    .car-window {
+        fill: #b0c4de;
+    }
+    .car-wheel {
+        fill: #333333;
+    }
+    .car-headlight {
+        fill: #ffffe0;
+    }
+    .tree-trunk {
+        fill: #8b4513;
+    }
+    .tree-foliage {
+        fill: #228b22;
+    }
+    .street-lamp {
+        fill: #a9a9a9;
+    }
+    .sidewalk {
+        fill: #d3d3d3;
+    }
+    .pedestrian {
+        fill: #ff7f50;
+    }
+    .traffic-light {
+        fill: #333;
+    }
+    .traffic-light-red {
+        fill: #ff0000;
+    }
+    .traffic-light-yellow {
+        fill: #ffff00;
+    }
+    .traffic-light-green {
+        fill: #00ff00;
+    }
+    .bench {
+        fill: #a0522d;
+    }
+    .crosswalk-line {
+        fill: #ffffff;
+    }
+    .bird {
+        fill: #000000;
+    }
+    @keyframes cloudMove {
+        from { transform: translateX(0); }
+        to { transform: translateX(1200px); }
+    }
+    .cloud {
+        animation: cloudMove 30s linear infinite;
+    }
+    @keyframes trafficLightBlink {
+        0%, 30% { fill: #ff0000; }
+        40%, 70% { fill: #ffff00; }
+        80%, 100% { fill: #00ff00; }
+    }
+    .blinking-light {
+        animation: trafficLightBlink 10s linear infinite;
+    }
+</style>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+<svg class="city" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600">
+    <!-- Background -->
+    <rect x="0" y="0" width="1200" height="600" fill="#b0e0e6" />
+
+    <!-- Sun -->
+    <circle cx="1100" cy="150" r="80" fill="#ffd700" />
+
+    <!-- Clouds -->
+    <circle cx="200" cy="100" r="70" fill="#ffffff" class="cloud" />
+    <circle cx="400" cy="180" r="80" fill="#ffffff" class="cloud" />
+    <circle cx="600" cy="80" r="90" fill="#ffffff" class="cloud" />
+    <circle cx="900" cy="120" r="70" fill="#ffffff" class="cloud" />
+
+    <!-- Roads -->
+    <rect x="0" y="300" width="1200" height="150" fill="#808080" />
+    
+    <!-- Sidewalks -->
+    <rect x="0" y="450" width="1200" height="50" class="sidewalk" />
+
+    <!-- Crosswalk -->
+    <rect x="550" y="450" width="10" height="50" class="crosswalk-line" />
+    <rect x="570" y="450" width="10" height="50" class="crosswalk-line" />
+    <rect x="590" y="450" width="10" height="50" class="crosswalk-line" />
+    <rect x="610" y="450" width="10" height="50" class="crosswalk-line" />
+    <rect x="630" y="450" width="10" height="50" class="crosswalk-line" />
+
+    <!-- Traffic Lights -->
+    <rect x="540" y="410" width="20" height="60" class="traffic-light" />
+    <circle cx="550" cy="420" r="5" class="traffic-light-red blinking-light" />
+    <circle cx="550" cy="440" r="5" class="traffic-light-yellow" />
+    <circle cx="550" cy="460" r="5" class="traffic-light-green" />
+
+    <rect x="650" y="410" width="20" height="60" class="traffic-light" />
+    <circle cx="660" cy="420" r="5" class="traffic-light-red blinking-light" />
+    <circle cx="660" cy="440" r="5" class="traffic-light-yellow" />
+    <circle cx="660" cy="460" r="5" class="traffic-light-green" />
+
+    <!-- Buildings -->
+    <rect x="50" y="150" width="120" height="300" fill="#a9a9a9" />
+    <g id="windows-building1"></g>
+
+    <rect x="220" y="200" width="100" height="250" fill="#c0c0c0" />
+    <g id="windows-building2"></g>
+
+    <rect x="400" y="120" width="150" height="330" fill="#a9a9a9" />
+    <g id="windows-building3"></g>
+
+    <rect x="600" y="180" width="120" height="270" fill="#c0c0c0" />
+    <g id="windows-building4"></g>
+
+    <rect x="800" y="140" width="180" height="310" fill="#a9a9a9" />
+    <g id="windows-building5"></g>
+
+    <rect x="1050" y="170" width="120" height="290" fill="#c0c0c0" />
+    <g id="windows-building6"></g>
+
+    <!-- Trees -->
+    <rect x="130" y="400" width="20" height="70" class="tree-trunk" />
+    <circle cx="140" cy="380" r="40" class="tree-foliage" />
+    <rect x="300" y="420" width="20" height="70" class="tree-trunk" />
+    <circle cx="310" cy="400" r="50" class="tree-foliage" />
+    <rect x="520" y="400" width="20" height="70" class="tree-trunk" />
+    <circle cx="530" cy="380" r="40" class="tree-foliage" />
+    <rect x="700" y="420" width="20" height="70" class="tree-trunk" />
+    <circle cx="710" cy="400" r="50" class="tree-foliage" />
+    <rect x="920" y="400" width="20" height="70" class="tree-trunk" />
+    <circle cx="930" cy="380" r="40" class="tree-foliage" />
+    <rect x="1100" y="420" width="20" height="70" class="tree-trunk" />
+    <circle cx="1110" cy="400" r="50" class="tree-foliage" />
+
+    <!-- Benches -->
+    <rect x="150" y="470" width="60" height="10" class="bench" />
+    <rect x="600" y="470" width="60" height="10" class="bench" />
+    <rect x="1000" y="470" width="60" height="10" class="bench" />
+
+    <!-- Street Lamps -->
+    <rect x="100" y="320" width="10" height="150" class="street-lamp" />
+    <rect x="300" y="340" width="10" height="130" class="street-lamp" />
+    <rect x="700" y="300" width="10" height="170" class="street-lamp" />
+    <rect x="950" y="310" width="10" height="160" class="street-lamp" />
+
+    <!-- Cars -->
+    <!-- Sedan -->
+    <rect x="100" y="330" width="100" height="40" class="car-body" />
+    <rect x="110" y="335" width="20" height="20" class="car-window" />
+    <rect x="170" y="335" width="20" height="20" class="car-window" />
+    <circle cx="115" cy="370" r="10" class="car-wheel" />
+    <circle cx="185" cy="370" r="10" class="car-wheel" />
+    <rect x="95" y="340" width="10" height="5" class="car-headlight" />
+    <rect x="195" y="340" width="10" height="5" class="car-headlight" />
+
+    <!-- SUV -->
+    <rect x="400" y="320" width="120" height="50" class="car-body" />
+    <rect x="410" y="325" width="30" height="25" class="car-window" />
+    <rect x="460" y="325" width="30" height="25" class="car-window" />
+    <rect x="510" y="325" width="30" height="25" class="car-window" />
+    <circle cx="420" cy="370" r="12" class="car-wheel" />
+    <circle cx="500" cy="370" r="12" class="car-wheel" />
+    <rect x="395" y="330" width="10" height="5" class="car-headlight" />
+    <rect x="510" y="330" width="10" height="5" class="car-headlight" />
+
+    <!-- Truck -->
+    <rect x="700" y="310" width="150" height="60" class="car-body" />
+    <rect x="710" y="320" width="40" height="30" class="car-window" />
+    <rect x="770" y="320" width="40" height="30" class="car-window" />
+    <rect x="840" y="310" width="10" height="50" fill="#000000" />
+    <circle cx="720" cy="370" r="15" class="car-wheel" />
+    <circle cx="820" cy="370" r="15" class="car-wheel" />
+    <rect x="695" y="335" width="10" height="5" class="car-headlight" />
+    <rect x="845" y="335" width="10" height="5" class="car-headlight" />
+
+    <!-- Pedestrians -->
+    <circle cx="70" cy="480" r="10" class="pedestrian" />
+    <circle cx="150" cy="480" r="10" class="pedestrian" />
+    <circle cx="230" cy="480" r="10" class="pedestrian" />
+    <circle cx="320" cy="480" r="10" class="pedestrian" />
+    <circle cx="850" cy="480" r="10" class="pedestrian" />
+    <circle cx="950" cy="480" r="10" class="pedestrian" />
+    <circle cx="1050" cy="480" r="10" class="pedestrian" />
+
+    <!-- Birds -->
+    <path d="M200 150 Q220 130 240 150 Q260 130 280 150" class="bird" />
+    <path d="M300 180 Q320 160 340 180 Q360 160 380 180" class="bird" />
+    <path d="M400 120 Q420 100 440 120 Q460 100 480 120" class="bird" />
+    <path d="M500 150 Q520 130 540 150 Q560 130 580 150" class="bird" />
+    <path d="M600 180 Q620 160 640 180 Q660 160 680 180" class="bird" />
+</svg>
+
+<script>
+    // Function to create windows on buildings
+    function createWindows(x, y, width, height, buildingId) {
+        const windowsGroup = document.getElementById(buildingId);
+        const windowWidth = 10;
+        const windowHeight = 15;
+        const padding = 10;
+
+        for (let i = padding; i < width - padding; i += 30) {
+            for (let j = padding; j < height - padding; j += 25) {
+                windowsGroup.innerHTML += `<rect x="${x + i}" y="${y + j}" width="${windowWidth}" height="${windowHeight}" class="building-window" />`;
+            }
+        }
+    }
+
+    // Create windows for each building
+    createWindows(50, 150, 120, 300, 'windows-building1');
+    createWindows(220, 200, 100, 250, 'windows-building2');
+    createWindows(400, 120, 150, 330, 'windows-building3');
+    createWindows(600, 180, 120, 270, 'windows-building4');
+    createWindows(800, 140, 180, 310, 'windows-building5');
+    createWindows(1050, 170, 120, 290, 'windows-building6');
+</script>
+
+</body>
+</html>
