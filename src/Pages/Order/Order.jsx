@@ -7,14 +7,18 @@ import useMenu from "../../Hooks/useMenu/useMenu";
 import FoodCard from "../../Components/FoodCard/FoodCard";
 import OrderTab from "./OrderTab/OrderTab";
 import { useParams } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Order = () => {
-  const [tabIndex, setTabIndex] = useState(0);
+    const categories = ["salad", "pizza", "soup", "dessert", "drinks"];
+    const { category } = useParams();
+    const initialIndex = categories.indexOf(category)
 
+
+    const [tabIndex, setTabIndex] = useState(initialIndex);
   const [menu] = useMenu();
-  const {category }= useParams();
   console.log(category);
-
+  
   const salad = menu.filter((item) => item.category === "salad");
   const pizza = menu.filter((item) => item.category === "pizza");
   const soup = menu.filter((item) => item.category === "soup");
@@ -22,6 +26,11 @@ const Order = () => {
   const drinks = menu.filter((item) => item.category === "drinks");
   return (
     <div>
+        <Helmet>
+            <title>
+                Bistro Boss | Order Food
+            </title>
+        </Helmet>
       <Cover img={coverImg} title={"Our Shop"}></Cover>
       <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
         <TabList>
@@ -32,21 +41,20 @@ const Order = () => {
           <Tab>Drinks </Tab>
         </TabList>
         <TabPanel>
-          <OrderTab items={salad} ></OrderTab>
+          <OrderTab items={salad}></OrderTab>
         </TabPanel>
         <TabPanel>
-          <OrderTab items={pizza} ></OrderTab>
+          <OrderTab items={pizza}></OrderTab>
         </TabPanel>
         <TabPanel>
-          <OrderTab items={soup} ></OrderTab>
+          <OrderTab items={soup}></OrderTab>
         </TabPanel>
         <TabPanel>
-          <OrderTab items={dessert} ></OrderTab>
+          <OrderTab items={dessert}></OrderTab>
         </TabPanel>
         <TabPanel>
-          <OrderTab items={drinks} ></OrderTab>
+          <OrderTab items={drinks}></OrderTab>
         </TabPanel>
-        
       </Tabs>
     </div>
   );
